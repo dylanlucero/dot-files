@@ -1,10 +1,3 @@
-set -g fish_greeting ""
-
-
-if not status --is-interactive
-	set -g interactive_mode = false
-end
-
 function fish_prompt
     set -l colors red green yellow blue magenta cyan
     set -l color_count (count $colors)
@@ -26,5 +19,3 @@ function fish_prompt
     set_color normal
     echo -n ' > '
 end
-
-
