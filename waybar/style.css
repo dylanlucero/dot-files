@@ -1,0 +1,89 @@
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Font Awesome 6 Free", "Symbols Nerd Font Propo";
+    font-size: 13px;
+    font-weight: bold;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#workspaces,
+#memory,
+#clock,
+#clock\.calendar,
+#network,
+#battery,
+#image,
+#custom-power {
+    background-color: rgba(30, 30, 46, 0.75);
+    color: #cdd6f4;
+    padding: 4px 16px;
+    margin: 5px 0px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #6c7086;
+    background-color: transparent;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+}
+
+#memory {
+    color: #f9e2af;
+}
+
+#clock {
+    color: #f5e0dc;
+}
+
+#clock\.calendar {
+    color: #f2cdcd;
+}
+
+#network {
+    color: #89b4fa;
+}
+
+#battery {
+    color: #a6e3a1;
+}
+
+#image {
+    color: #1db954;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 5px 0;
+    border-radius: 8px;
+}
+
+#image image {
+    border-radius: 8px;
+}
+
+#image.empty {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#battery.warning, #battery.critical, #battery.discharging {
+    color: #f38ba8;
+}
+
+#custom-power {
+    color: #f38ba8;
+    padding: 4px 12px;
+}

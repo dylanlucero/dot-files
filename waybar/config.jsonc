@@ -1,0 +1,105 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "margin-bottom": 10,
+    "margin-left": 15,
+    "margin-right": 15,
+    "spacing": 8,
+
+    "modules-left": [
+        "memory",
+        "clock",
+        "clock#calendar"
+    ],
+    "modules-center": [
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "network",
+        "battery",
+        "custom/spotify-state",
+        "image#spotify",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "memory": {
+        "interval": 5,
+        "format": "  {used:0.1f}G"
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": "  {:%I:%M %p}",
+        "tooltip": false
+    },
+
+    "clock#calendar": {
+        "interval": 3600,
+        "format": "  {:%b %d}", 
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+        "network": {
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  Connected",
+        "format-disconnected": "⚠  Disconnected",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "on-click": "nm-connection-editor" // Launches the network connections GUI
+    },
+
+
+        "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-plugged": "  {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""],
+        "max-length": 15 // Hard limits the string length to clip any unwanted driver text leaks
+    },
+
+
+    "custom/power": {
+        "format": "⏼",
+        "tooltip": false,
+        "on-click": "wlogout"
+    },
+
+    "custom/spotify-state": {
+        "exec": "/home/dylan/Applications/spotify-waybar/spotify-waybar",
+        "return-type": "json",
+        "restart-interval": 2,
+        "hide-empty-text": true,
+        "format": "{text}"
+    },
+
+    "image#spotify": {
+        "exec": "/home/dylan/Applications/spotify-waybar/spotify-waybar art-path",
+        "size": 32,
+        "interval": 1,
+        "on-click": "/home/dylan/Applications/spotify-waybar/spotify-waybar popup",
+        "on-click-right": "playerctl next"
+    }
+}
